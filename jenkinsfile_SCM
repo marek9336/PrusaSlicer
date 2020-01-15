@@ -32,6 +32,8 @@ pipeline
 			{
 				echo "Build"
 				sh 'cd deps; mkdir -p build/destd/usr/local/;cd build; pwd; cmake .. -DDESTDIR=destd/; pwd; make -j8'
+
+				sh 'tar -czvf PrusaSlicer.tar.gz deps/build/'
 				sh 'sleep 1000'
 			}
 		}
