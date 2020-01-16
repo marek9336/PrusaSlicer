@@ -1,9 +1,9 @@
 pipeline
 {
-	agent docker
-	//{
-	//	label 'slave-docker'
-	//}
+	agent
+	{
+		label 'slave-docker'
+	}
 	stages 
 	{
 		stage('Validate Docker')
