@@ -2,11 +2,7 @@ pipeline
 {
 	agent 
 	{
-		docker
-		{
 		label 'slave-docker'
-		image 'jenkins/slave'
-		}
 	}
 	stages 
 	{
