@@ -16,8 +16,8 @@ pipeline
 			steps
 			{
 				echo "Validate Docker"
-				sh 'docker version'
-				sh 'docker build -t docker-slave/jenkins-slave:0.1'
+				// sh 'docker version'
+				// sh 'docker build -t docker-slave/jenkins-slave:0.1'
 			}
 		}
 		stage('Preparation')
