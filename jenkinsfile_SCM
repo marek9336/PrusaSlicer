@@ -10,22 +10,11 @@ pipeline
 	}
 	stages 
 	{
-		stage('Validate Docker')
-		{
-			steps
-			{
-				echo "Validate Docker"
-				// sh 'docker version'
-				// sh 'docker build -t docker-slave/jenkins-slave:0.1'
-			}
-		}
 		stage('Preparation')
 		{
 			steps
 			{
 				echo "Preparation"
-				// sh 'echo "jenkins" | sudo -S apt-get install cmake'
-				// sh 'echo "jenkins" | sudo -S apt-get install make'
 				// sh 'echo "jenkins" | sudo -S apt-get -y install libgtk2.0-dev libgtk-3-dev libpulse-dev'
 				sh 'cmake --version'
 				sh 'make --version'
