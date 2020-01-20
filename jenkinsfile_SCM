@@ -15,6 +15,7 @@ pipeline
 			steps
 			{
 				echo "Validate Docker"
+				sh 'vim --version'
 				// sh 'docker version'
 				// sh 'docker build -t docker-slave/jenkins-slave:0.1'
 			}
