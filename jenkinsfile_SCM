@@ -5,6 +5,7 @@ pipeline
 		docker
 		{
 		image 'jenkins-slave:1.0'
+		docker login jenkins:jenkins localhost:8080
 		label 'slave-docker'
 		}
 	}
