@@ -4,8 +4,8 @@ pipeline
 	{
 		docker
 		{
-		image 'jenkins-slave:1.0'
-		args 'docker login jenkins:jenkins'
+		image 'jenkins-slave/jenkins-slave:1.0'
+#		args 'docker login jenkins:jenkins'
 		label 'slave-docker'
 		}
 	}
