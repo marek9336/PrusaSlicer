@@ -5,7 +5,6 @@ pipeline
 		docker
 		{
 		image 'jenkins-slave/jenkins-slave:1.0'
-
 		label 'slave-docker'
 		}
 	}
