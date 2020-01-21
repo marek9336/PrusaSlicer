@@ -24,7 +24,6 @@ pipeline
 		{
 			steps
 			{
-				sh 'git config --global marek9336.email marek9336@gmail.com'
 				echo "Build"
 				sh 'cd deps; mkdir -p build/destd/usr/local/;cd build; pwd; cmake .. -DDESTDIR=destd/; pwd; make -j8'
 			}
