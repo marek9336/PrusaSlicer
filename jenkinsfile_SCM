@@ -20,8 +20,6 @@ pipeline
 				sh 'make --version'
 				// sh 'git config --global user.email "marek9336@gmail.com"'
   				// sh 'git config --global user.name "marek9336"'
-				sh 'git config --unset --local user.name'
-				sh 'git config --unset --local user.email'
 				sh 'git config -l'
 			}
 		}
