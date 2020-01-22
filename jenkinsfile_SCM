@@ -18,8 +18,8 @@ pipeline
 				// sh 'echo "jenkins" | sudo -S apt-get -y install libgtk2.0-dev libgtk-3-dev libpulse-dev'
 				sh 'cmake --version'
 				sh 'make --version'
-				sh 'git config --global user.email "marek9336@gmail.com"'
-				sh 'git config --global user.name "marek9336"'
+				// sh 'git config --global user.email "marek9336@gmail.com"'
+  				// sh 'git config --global user.name "marek9336"'
 				sh 'git config -l'
 			}
 		}
@@ -27,8 +27,6 @@ pipeline
 		{
 			steps
 			{
-				// sh 'git config --global user.email "marek9336@gmail.com"'
-  				// sh 'git config --global user.name "marek9336"'
 				echo "Build"
 				sh 'cd deps; mkdir -p build/destd/usr/local/;cd build; pwd; cmake .. -DDESTDIR=destd/; pwd; make -j8'
 			}
