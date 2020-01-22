@@ -18,6 +18,7 @@ pipeline
 				// sh 'echo "jenkins" | sudo -S apt-get -y install libgtk2.0-dev libgtk-3-dev libpulse-dev'
 				sh 'cmake --version'
 				sh 'make --version'
+				sh 'git config -l'
 			}
 		}
 		stage('Build')
