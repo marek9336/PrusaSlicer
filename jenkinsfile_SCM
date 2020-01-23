@@ -28,8 +28,9 @@ pipeline
 			steps
 			{
 				echo "Build"
-				sh 'cd deps; mkdir -p build/destd/usr/local/;cd build; pwd; cmake .. -DDESTDIR=destd/; pwd; make -j8'
+				// sh 'cd deps; mkdir -p build/destd/usr/local/;cd build; pwd; cmake .. -DDESTDIR=destd/; pwd; make -j8'
 				// sh 'mkdir build/destdir; cd build; cmake .. -DDESTDIR=destdir/'
+				sh 'cd deps; mkdir build; cd build; cmake -G Ninja ..; ninja; cd ../..; mkdir build; cd build; cmake .. -G Ninja -DSLIC3R_STATIC=1 -DCMAKE_PREFIX_PATH="$PWD/../deps/build/destdir/usr/local"; ninja'
 			}
 		}
 	}
