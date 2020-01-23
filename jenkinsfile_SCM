@@ -21,8 +21,11 @@ pipeline
 				// sh 'git config --global user.email "marek9336@gmail.com"'
   				// sh 'git config --global user.name "marek9336"'
 				sh 'git config -l'
-				sh 'CFLAGS = pkg-config --cflags glib-2.0'
-				sh 'LDLIBS = pkg-config --libs glib-2.0'
+				environment
+				{
+					CFLAGS = pkg-config --cflags glib-2.0
+					LDLIBS = pkg-config --libs glib-2.0
+				}
 			}
 		}
 		stage('Build')
