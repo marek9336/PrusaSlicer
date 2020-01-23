@@ -8,6 +8,10 @@ pipeline
 		label 'slave-docker'
 		}
 	}
+	environment
+	{
+		CFLAGS = "pkg-config --cflags glib-2.0"
+	}
 	stages 
 	{
 		stage('Preparation')
@@ -21,10 +25,6 @@ pipeline
 				// sh 'git config --global user.email "marek9336@gmail.com"'
   				// sh 'git config --global user.name "marek9336"'
 				sh 'git config -l'
-				environment
-				{
-					CFLAGS = "pkg-config --cflags glib-2.0"
-				}
 			}
 		}
 		stage('Build')
