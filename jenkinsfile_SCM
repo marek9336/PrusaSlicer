@@ -21,6 +21,8 @@ pipeline
 				// sh 'git config --global user.email "marek9336@gmail.com"'
   				// sh 'git config --global user.name "marek9336"'
 				sh 'git config -l'
+				sh 'CFLAGS = pkg-config --cflags glib-2.0'
+				sh 'LDLIBS = pkg-config --libs glib-2.0'
 			}
 		}
 		stage('Build')
@@ -28,7 +30,7 @@ pipeline
 			steps
 			{
 				echo "Build"
-				sh 'CFLAGS = pkg-config --cflags glib-2.0; LDLIBS = pkg-config --libs glib-2.0; cd deps; mkdir -p build/destd/usr/local/;cd build; pwd; cmake .. -DDESTDIR=destd/; pwd; make -j8'
+				sh 'cd deps; mkdir -p build/destd/usr/local/;cd build; pwd; cmake .. -DDESTDIR=destd/; pwd; make -j8'
 				// sh 'mkdir build/destdir; cd build; cmake .. -DDESTDIR=destdir/'
 				// sh 'cd deps; mkdir -p build; cd build; cmake -G"Ninja" ..; ninja; cd ../..; mkdir -p build; cd build; cmake .. -G Ninja -DSLIC3R_STATIC=1 -DCMAKE_PREFIX_PATH="$PWD/../deps/build/destdir/usr/local"; ninja'
 			}
