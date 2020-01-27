@@ -52,7 +52,7 @@ pipeline
 			steps
 			{
 				sh 'pwd'
-				if (catchError = 'FAILURE')
+				if (catchError='FAILURE')
 				{
 					sh 'sleep 600'
 				}
