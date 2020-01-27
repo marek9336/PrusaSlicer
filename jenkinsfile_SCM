@@ -26,6 +26,7 @@ pipeline
 				// sh 'git config --global user.email "marek9336@gmail.com"'
   				// sh 'git config --global user.name "marek9336"'
 				sh 'git config -l'
+				
 			}
 		}
 		stage('Build')
@@ -33,7 +34,7 @@ pipeline
 			steps
 			{
 				echo "Build"
-				sh 'cd deps; mkdir -p build/destd/usr/local/;cd build; pwd; cmake .. -DDESTDIR=destd/; pwd; sh 'echo "jenkins" | sudo -S make -j8'
+				sh 'cd deps; mkdir -p build/destd/usr/local/;cd build; pwd; cmake .. -DDESTDIR=destd/; pwd; echo "jenkins" | sudo -S make -j8'
 				// sh 'mkdir build/destdir; cd build; cmake .. -DDESTDIR=destdir/'
 				// sh 'cd deps; mkdir -p build; cd build; cmake -G"Ninja" ..; ninja; cd ../..; mkdir -p build; cd build; cmake .. -G Ninja -DSLIC3R_STATIC=1 -DCMAKE_PREFIX_PATH="$PWD/../deps/build/destdir/usr/local"; ninja'
 				sh 'sleep 600'
