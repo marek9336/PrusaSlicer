@@ -39,7 +39,7 @@ pipeline
 				sh 'sleep 600'
 			}
 		}
-		stage ("wait_prior_starting_smoke_testing")
+		stage('wait_prior_starting_smoke_testing')
 		{
 			sh 'pwd'
 			sh 'sleep 600'
