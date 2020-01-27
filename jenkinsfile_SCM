@@ -35,22 +35,6 @@ pipeline
 			{
 				script
 				{
-					try
-					{
-						build job: 'system-check-flow'
-					}
-					catch (err)
-					{
-						echo err
-					}
-				}
-				echo currentBuild.result
-			}
-	
-			steps
-			{
-				script
-				{
 				try
 				{
 				echo "Build"
