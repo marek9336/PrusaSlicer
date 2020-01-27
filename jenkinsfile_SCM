@@ -8,11 +8,11 @@ pipeline
 		label 'slave-docker'
 		}
 	}
-	// environment
-	// {
-	//	CFLAGS = "pkg-config --cflags glib-2.0"
-	//	LDLIBS = "pkg-config --libs glib-2.0"
-	// }
+	environment
+	{
+		CFLAGS = 'pkg-config --cflags glib-2.0'
+		LDLIBS = 'pkg-config --libs glib-2.0'
+	}
 	stages 
 	{
 		stage('Preparation')
