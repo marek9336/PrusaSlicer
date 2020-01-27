@@ -35,18 +35,19 @@ pipeline
 			{
 				script
 				{
-				try
-				{
-				echo "Build"
-				sh 'cd deps; mkdir -p build/destd/usr/local/;cd build; pwd; cmake .. -DDESTDIR=destd/; pwd; make -j8'
-				// sh 'mkdir build/destdir; cd build; cmake .. -DDESTDIR=destdir/'
-				// sh 'cd deps; mkdir -p build; cd build; cmake -G"Ninja" ..; ninja; cd ../..; mkdir -p build; cd build; cmake .. -G Ninja -DSLIC3R_STATIC=1 -DCMAKE_PREFIX_PATH="$PWD/../deps/build/destdir/usr/local"; ninja'
-				sh 'sleep 600'
-				}
-				catch (err)
-				{
-				echo err
-				}
+					try
+					{
+						echo "Build"
+						sh 'cd deps; mkdir -p build/destd/usr/local/;cd build; pwd; cmake .. -DDESTDIR=destd/'
+						sh 'cd deps/build; pwd; make -j8'
+						// sh 'mkdir build/destdir; cd build; cmake .. -DDESTDIR=destdir/'
+						// sh 'cd deps; mkdir -p build; cd build; cmake -G"Ninja" ..; ninja; cd ../..; mkdir -p build; cd build; cmake .. -G Ninja -DSLIC3R_STATIC=1 -DCMAKE_PREFIX_PATH="$PWD/../deps/build/destdir/usr/local"; ninja'
+						sh 'sleep 600'
+					}
+					catch (err)
+					{
+						echo err
+					}
 				}
 			}
 		}
