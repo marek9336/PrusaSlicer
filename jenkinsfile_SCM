@@ -8,11 +8,11 @@ pipeline
 		label 'slave-docker'
 		}
 	}
-	// environment
-	// {
-	//	CFLAGS = 'pkg-config --cflags glib-2.0'
-	//	LDLIBS = 'pkg-config --libs glib-2.0'
-	// }
+//	environment
+//	{
+//		CFLAGS = 'pkg-config --cflags glib-2.0'
+//		LDLIBS = 'pkg-config --libs glib-2.0'
+//	}
 	stages 
 	{
 		stage('Preparation')
@@ -20,7 +20,7 @@ pipeline
 			steps
 			{
 				echo "Preparation"
-				// sh 'echo "jenkins" | sudo -S apt-get -y install vim'
+//				sh 'echo "jenkins" | sudo -S apt-get -y install vim'
 				sh 'cmake --version'
 				sh 'make --version'
 				sh 'git config -l'
@@ -38,17 +38,17 @@ pipeline
 		{
 			steps
 			{
-		//		timeout(time: 5, unit: 'MINUTES')
-		//		{
+//				timeout(time: 5, unit: 'MINUTES')
+//				{
 					catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
 					{
 						echo "Build"
 						sh 'cd deps; mkdir -p build/destd/usr/local/;cd build; pwd; cmake .. -DDESTDIR=destd/'
 						sh 'cd deps/build; pwd; make -j8'
-						// sh 'mkdir build/destdir; cd build; cmake .. -DDESTDIR=destdir/'
-						// sh 'cd deps; mkdir -p build; cd build; cmake -G"Ninja" ..; ninja; cd ../..; mkdir -p build; cd build; cmake .. -G Ninja -DSLIC3R_STATIC=1 -DCMAKE_PREFIX_PATH="$PWD/../deps/build/destdir/usr/local"; ninja'
+//						sh 'mkdir build/destdir; cd build; cmake .. -DDESTDIR=destdir/'
+//						sh 'cd deps; mkdir -p build; cd build; cmake -G"Ninja" ..; ninja; cd ../..; mkdir -p build; cd build; cmake .. -G Ninja -DSLIC3R_STATIC=1 -DCMAKE_PREFIX_PATH="$PWD/../deps/build/destdir/usr/local"; ninja'
 					}
-		//		}
+//				}
 			}
 		}
 		stage('testing')
@@ -56,7 +56,7 @@ pipeline
 			steps
 			{
 				sh 'pwd'
-				// sh 'sleep 600'
+//				sh 'sleep 600'
 			}
 		}
 	}
