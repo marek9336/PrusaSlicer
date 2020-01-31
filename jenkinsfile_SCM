@@ -46,6 +46,7 @@ pipeline
 						echo "Build"
 						sh 'cd deps; mkdir -p build/destd/usr/local/;cd build; pwd; cmake .. -DDESTDIR=destd/'
 						sh 'cd deps/build; pwd; make -j8'
+//						sh 'cd deps/build; pwd; make install'
 //						sh 'mkdir build/destdir; cd build; cmake .. -DDESTDIR=destdir/'
 //						sh 'cd deps; mkdir -p build; cd build; cmake -G"Ninja" ..; ninja; cd ../..; mkdir -p build; cd build; cmake .. -G Ninja -DSLIC3R_STATIC=1 -DCMAKE_PREFIX_PATH="$PWD/../deps/build/destdir/usr/local"; ninja'
 					}
@@ -58,6 +59,7 @@ pipeline
 			{
 				sh 'pwd'
 //				sh 'sleep 600'
+				sh 'ctest'
 			}
 		}
 	}
