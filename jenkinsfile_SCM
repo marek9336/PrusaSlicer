@@ -31,7 +31,8 @@ pipeline
 		{
 			steps
 			{
-				sh 'vim'
+				echo 'pouze test'
+//				sh 'vim'
 			}
 		}
 		stage('Build')
