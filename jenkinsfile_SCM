@@ -59,7 +59,7 @@ pipeline
 			{
 				sh 'pwd'
 //				sh 'sleep 600'
-				sh 'ctest'
+				sh 'cd deps/build; pwd; ctest'
 			}
 		}
 	}
